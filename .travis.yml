@@ -1,0 +1,15 @@
+dist: trusty
+sudo: required
+services:
+  - docker
+language: node_js
+node_js:
+  - "7"
+before_install:
+  - sudo apt-get install python3
+  - python3 version
+  - docker pull influxdb:latest
+  - docker run -dit -name influxdb -p 8086:8086 influxdb:latest
+  - sleep 30
+  - git checkout unit_tests
+  - git pull git@github.com:influxdata/influxdb-nodejs.git unit-tests
