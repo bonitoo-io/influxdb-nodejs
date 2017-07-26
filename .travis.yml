@@ -12,4 +12,4 @@ before_install:
   - docker run -dit --name influxdb -p 8086:8086 influxdb:latest
   - sleep 30
   - git checkout unit-tests
-  - git pull git@github.com:influxdata/influxdb-nodejs.git unit-tests
+  - git pull https://github.com/influxdata/influxdb-nodejs.git unit-tests
